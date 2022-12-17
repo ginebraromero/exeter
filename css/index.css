@@ -12,7 +12,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-size: 20px;
+    font-size: 17px;
 }
 
 * {
@@ -23,17 +23,6 @@ html {
 a {
     color: black;
     text-decoration: none;
-}
-
-section {
-    border-bottom: 1px solid black;
-}
-
-#wrapper {
-    font-family: general;
-    background-color: white;
-    width: 940px;
-    margin: auto;
 }
 
 /*Para esconder cosas*/
@@ -55,13 +44,26 @@ section {
     user-select: none;
 }
 
-/*Estilo por secciones*/
+/*Wrapper*/
+
+#wrapper {
+    font-family: general;
+    background-color: white;
+    width: 860px;
+    margin: auto;
+}
+
+/*Secciones*/
+
+section {
+    border-bottom: 1px solid black;
+}
 
 /*Barra de navegación*/
 
 #navbar {
-    height: 80px;
-    width: 940px;
+    height: 72px;
+    width: 860px;
     background-color: white;
     position: fixed;
     top: 0;
@@ -74,7 +76,7 @@ section {
 #navbar a {
     float: left;
     font-size: 2rem;
-    padding: 26px;
+    padding: 24px;
     top: 50%;
     left: 50%;
 }
@@ -85,14 +87,14 @@ section {
 }
 
 #navbar-block {
-    height: 80px;
+    height: 72px;
     width: 100%;
 }
 
 /*Hero section*/
 
 #hero {
-    height: 900px;
+    height: 830px;
     width: 100%;
     position: relative;
     background-image: url("../images/exeter-cover-hd.jpg");
@@ -180,7 +182,7 @@ section {
 audio {
     width: 50%;
 }
- 
+
 audio::-webkit-media-controls-panel {
     background-color: white;
 }
@@ -200,4 +202,94 @@ audio::-webkit-media-controls-volume-slider {
 
 audio::-webkit-media-controls-time-remaining-display {
     color: rgb(255 50 47);
+}
+
+
+
+
+
+
+
+/*--------------------------------------*/
+
+/*Media Queries*/
+
+@media only screen and (max-width: 1345px) {
+    #exeter2 {
+        padding-left: 10px;
+        left: 16%;
+    }
+
+    #exeter3 {
+        padding-right: 10px;
+        left: 88%;
+    }
+}
+
+@media only screen and (max-width: 1096px) {
+    #exeter2 {
+        left: 26%;
+        top: 17%;
+        padding-left: 95px;
+    }
+
+    #exeter3 {
+        opacity: 0;
+        padding: 0;
+        width: 0;
+        height: 0;
+        top: 0;
+        left: 0;
+    }
+
+    #exeter4 {
+        left: 24%;
+        top: 73%;
+        padding-left: 60px;
+    }
+
+    #exeter5 {
+        left: 73%;
+        top: 79%;
+        padding-right: 108px;
+    }
+
+    #exeter6 {
+        left: 77.5%;
+        top: 26%;
+        padding-right: 35px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #exeter1 {
+        opacity: 1;
+    }
+
+    #exeter2, #exeter3, #exeter4, #exeter5, #exeter6 {
+        left: 50%;
+        top: 50%;
+        opacity: 0;
+    }
+
+    audio {
+        width: 90%;
+        margin: auto;
+    }
+
+    #wrapper {
+        width: 100%;
+        height: 100vh;
+    }
+
+    #navbar {
+        width: 100%;
+    }
+
+    #hero {
+        width: 100%;
+        height: 0;
+        padding-bottom: 100%;
+        background-size: contain;
+    }
 }
