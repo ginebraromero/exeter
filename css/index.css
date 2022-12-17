@@ -1,0 +1,203 @@
+/*Estilo general*/
+
+@font-face {
+    font-family: general;
+    src: url("../fonts/Merchant_Copy.ttf");
+}
+
+@font-face {
+    font-family: doublesize;
+    src: url("../fonts/Merchant_Copy_Doublesize.ttf");
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 20px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+section {
+    border-bottom: 1px solid black;
+}
+
+#wrapper {
+    font-family: general;
+    background-color: white;
+    width: 940px;
+    margin: auto;
+}
+
+/*Para esconder cosas*/
+.hide {
+    opacity: 0;
+}
+
+.hide:hover {
+    opacity: 1;
+}
+
+/*Para que no se pueda seleccionar el texto*/
+.not-selectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/*Estilo por secciones*/
+
+/*Barra de navegación*/
+
+#navbar {
+    height: 80px;
+    width: 940px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    border-bottom: 1px solid black;
+    z-index: 1;
+    /* Transition effect when sliding down (and up) */
+    transition: top 0.4s;
+}
+
+#navbar a {
+    float: left;
+    font-size: 2rem;
+    padding: 26px;
+    top: 50%;
+    left: 50%;
+}
+
+#navbar a:hover {
+    color: white;
+    background-color: black;
+}
+
+#navbar-block {
+    height: 80px;
+    width: 100%;
+}
+
+/*Hero section*/
+
+#hero {
+    height: 900px;
+    width: 100%;
+    position: relative;
+    background-image: url("../images/exeter-cover-hd.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: contain;
+}
+
+#exeter1 {
+    font-size: 6rem;
+    text-align: center;
+    padding: 8vh 15%;
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#exeter2 {
+    font-size: 6rem;
+    text-align: center;
+    padding: 8vh 15%;
+    display: inline-block;
+    position: absolute;
+    left: 9%;
+    top: 22%;
+    transform: translate(-50%, -50%);
+}
+
+#exeter3 {
+    font-size: 6rem;
+    text-align: center;
+    padding: 8vh 15%;
+    display: inline-block;
+    position: absolute;
+    left: 95%;
+    top: 32%;
+    transform: translate(-50%, -50%);
+}
+
+#exeter4 {
+    font-size: 6rem;
+    text-align: center;
+    padding: 8vh 15%;
+    display: inline-block;
+    position: absolute;
+    left: 20%;
+    top: 73%;
+    transform: translate(-50%, -50%);
+}
+
+#exeter5 {
+    font-size: 6rem;
+    text-align: center;
+    padding: 8vh 15%;
+    display: inline-block;
+    position: absolute;
+    left: 80%;
+    top: 79%;
+    transform: translate(-50%, -50%);
+}
+
+#exeter6 {
+    font-size: 6rem;
+    text-align: center;
+    padding: 8vh 15%;
+    display: inline-block;
+    position: absolute;
+    left: 63%;
+    top: 16%;
+    transform: translate(-50%, -50%);
+}
+
+
+/*Resto de secciones*/
+
+.titulo {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+/*Listen to the album*/
+
+audio {
+    width: 50%;
+}
+ 
+audio::-webkit-media-controls-panel {
+    background-color: white;
+}
+
+audio::-webkit-media-controls-mute-button {
+    background-color: white;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: white;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    background-color: white;
+    padding-left: 20px;
+}
+
+audio::-webkit-media-controls-time-remaining-display {
+    color: rgb(255 50 47);
+}
