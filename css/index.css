@@ -277,6 +277,10 @@ audio::-webkit-media-controls-time-remaining-display {
         margin: auto;
     }
 
+    html {
+        font-size: 15px;
+    }
+
     #wrapper {
         width: 100%;
         height: 100vh;
@@ -285,6 +289,20 @@ audio::-webkit-media-controls-time-remaining-display {
     #navbar {
         width: 100%;
     }
+
+    #navbar a {    
+        font-size: 1.7rem;
+        padding: 26px 15px;
+    }
+    /*
+    #navbar a {
+        float: left;
+        font-size: 2rem;
+        padding: 24px;
+        top: 50%;
+        left: 50%;
+    }
+    */
 
     #hero {
         width: 100%;
