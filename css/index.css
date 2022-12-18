@@ -63,25 +63,6 @@ blockquote::before {
     left: 16px;
 }
 
-/*Para esconder cosas*/
-.hide {
-    opacity: 0;
-}
-
-.hide:hover {
-    opacity: 1;
-}
-
-/*Para que no se pueda seleccionar el texto*/
-.not-selectable {
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
 /*Wrapper*/
 
 #wrapper {
@@ -126,6 +107,7 @@ section {
 #navbar-block {
     height: 72px;
     width: 100%;
+    border-bottom: 1px solid black;
 }
 
 .subpage {
@@ -147,6 +129,23 @@ section {
     background-repeat: no-repeat;
     background-position: top;
     background-size: contain;
+}
+
+.hide {
+    opacity: 0;
+}
+
+.hide:hover {
+    opacity: 1;
+}
+
+.not-selectable {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #exeter1 {
@@ -219,12 +218,12 @@ section {
 /*Resto de secciones*/
 
 .section {
-    padding: 20px 0;
+    padding: 30px 0;
 }
 
 .titulo {
     font-size: 2rem;
-    padding: 10px 0 30px;
+    padding-bottom: 30px;
 }
 
 /*Sección Album*/
@@ -254,6 +253,10 @@ audio::-webkit-media-controls-volume-slider {
 }
 
 audio::-webkit-media-controls-time-remaining-display {
+    color: black
+}
+
+audio::-webkit-media-controls-current-time-display {
     color: var(--rojo);
 }
 
@@ -264,7 +267,117 @@ audio::-webkit-media-controls-time-remaining-display {
     gap: 35px;
 }
 
+/*Gallery------------------------------------*/
 
+/* Slideshow container */
+.slideshow-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+/*Slides*/
+.slide {
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.slide::after {
+    padding-top: 56.2499999993%;
+    display: block;
+    content: '';
+}
+
+.youtube {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.grid-gallery {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+#gallery img {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    user-select: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    padding: 1.9%;
+    font-size: 2rem;
+    color: white;
+    background-color: black;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+}
+
+/* On hover */
+.prev:hover,
+.next:hover {
+    color: black;
+    background-color: white;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    margin: 0 2px;
+    font-size: 2rem;
+    display: inline-block;
+    transition: background-color 0.1s ease;
+}
+
+.active {
+    color: var(--rojo);
+}
+
+.dot:hover {
+    background-color: black;
+    color: white;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.6
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/*--------------------------------------*/
 
 
 
@@ -320,28 +433,11 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 @media only screen and (max-width: 900px) {
-    #exeter1 {
-        opacity: 1;
-    }
-
-    #exeter2,
-    #exeter3,
-    #exeter4,
-    #exeter5,
-    #exeter6 {
-        left: 50%;
-        top: 50%;
-        opacity: 0;
-    }
-
-    audio {
-        width: 90%;
-        margin: auto;
-    }
-
+    /*
     html {
         font-size: 15px;
     }
+    */
 
     #wrapper {
         width: 100%;
@@ -363,4 +459,28 @@ audio::-webkit-media-controls-time-remaining-display {
         padding-bottom: 100%;
         background-size: contain;
     }
+
+    #exeter1 {
+        opacity: 1;
+    }
+
+    #exeter2,
+    #exeter3,
+    #exeter4,
+    #exeter5,
+    #exeter6 {
+        left: 50%;
+        top: 50%;
+        opacity: 0;
+    }
+    
+    .section {
+        padding: 30px 10px;
+    }
+
+    #grid-audio {
+        grid-template-columns: 1fr;
+        gap: 4px;
+    }
+
 }
