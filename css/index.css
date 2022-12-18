@@ -10,6 +10,16 @@
     src: url("../fonts/Merchant_Copy_Doublesize.ttf");
 }
 
+@font-face {
+    font-family: din;
+    src: url("../fonts/DIN.ttf");
+    font-weight: thin;
+}
+
+:root {
+    --rojo: rgb(255 50 47);
+}
+
 html {
     scroll-behavior: smooth;
     font-size: 17px;
@@ -23,6 +33,34 @@ html {
 a {
     color: black;
     text-decoration: none;
+}
+
+p, blockquote {
+    font-family: din;
+    font-size: 0.85rem;
+}
+
+p a {
+    font-weight: bold;
+}
+
+p a:hover {
+    background-color: black;
+    color: white;
+}
+
+blockquote {
+    padding: 10px 40px 0;
+    position: relative;
+}
+
+blockquote::before {
+    content: "\201C";
+    font-family: general;
+    position: absolute;
+    font-size: 2.3rem;
+    top: 15px;
+    left: 16px;
 }
 
 /*Para esconder cosas*/
@@ -76,9 +114,8 @@ section {
 #navbar a {
     float: left;
     font-size: 2rem;
-    padding: 24px;
-    top: 50%;
-    left: 50%;
+    height: 0;
+    padding: 26px 24px 46px;
 }
 
 #navbar a:hover {
@@ -89,6 +126,15 @@ section {
 #navbar-block {
     height: 72px;
     width: 100%;
+}
+
+.subpage {
+    color: var(--rojo);
+}
+
+#navbar a.subpage:hover {
+    background-color: var(--rojo);
+    color: white;
 }
 
 /*Hero section*/
@@ -172,19 +218,26 @@ section {
 
 /*Resto de secciones*/
 
-.titulo {
-    font-size: 2rem;
-    line-height: 3rem;
+.section {
+    padding: 20px 0;
 }
 
-/*Listen to the album*/
+.titulo {
+    font-size: 2rem;
+    padding: 10px 0 30px;
+}
+
+/*Sección Album*/
 
 audio {
-    width: 50%;
+    width: 100%;
+    padding-bottom: 20px;
+    height: 40px;
 }
 
 audio::-webkit-media-controls-panel {
     background-color: white;
+    height: 40px;
 }
 
 audio::-webkit-media-controls-mute-button {
@@ -201,10 +254,15 @@ audio::-webkit-media-controls-volume-slider {
 }
 
 audio::-webkit-media-controls-time-remaining-display {
-    color: rgb(255 50 47);
+    color: var(--rojo);
 }
 
-
+#grid-audio {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
 
 
 
@@ -266,7 +324,11 @@ audio::-webkit-media-controls-time-remaining-display {
         opacity: 1;
     }
 
-    #exeter2, #exeter3, #exeter4, #exeter5, #exeter6 {
+    #exeter2,
+    #exeter3,
+    #exeter4,
+    #exeter5,
+    #exeter6 {
         left: 50%;
         top: 50%;
         opacity: 0;
@@ -290,19 +352,10 @@ audio::-webkit-media-controls-time-remaining-display {
         width: 100%;
     }
 
-    #navbar a {    
+    #navbar a {
         font-size: 1.7rem;
         padding: 26px 15px;
     }
-    /*
-    #navbar a {
-        float: left;
-        font-size: 2rem;
-        padding: 24px;
-        top: 50%;
-        left: 50%;
-    }
-    */
 
     #hero {
         width: 100%;
