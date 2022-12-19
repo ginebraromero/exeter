@@ -35,7 +35,8 @@ a {
     text-decoration: none;
 }
 
-p, blockquote {
+p,
+blockquote {
     font-family: din;
     font-size: 0.85rem;
 }
@@ -70,6 +71,7 @@ blockquote::before {
     background-color: white;
     width: 860px;
     margin: auto;
+    transition: 0.4s;
 }
 
 /*Secciones*/
@@ -88,35 +90,61 @@ section {
     top: 0;
     border-bottom: 1px solid black;
     z-index: 1;
-    /* Transition effect when sliding down (and up) */
-    transition: top 0.4s;
+    transition: 0.4s;
 }
 
-#navbar a {
+nav a, .sidenav a, #menu, #close {
     float: left;
+    font-family: general;
     font-size: 2rem;
     height: 0;
     padding: 26px 24px 46px;
 }
 
-#navbar a:hover {
-    color: white;
-    background-color: black;
+.navbtn, #home, #menu, #close {
+    color: black;
+    background-color: white;
 }
 
-#navbar-block {
-    height: 72px;
-    width: 100%;
-    border-bottom: 1px solid black;
+.navbtn:hover, #home:hover, #menu:hover, #close:hover {
+    color: white;
+    background-color: black;
 }
 
 .subpage {
     color: var(--rojo);
 }
 
-#navbar a.subpage:hover {
+.subpage:hover {
     background-color: var(--rojo);
     color: white;
+}
+
+#menu, #close {
+    cursor: pointer;
+}
+
+#menu {
+    display: none;
+}
+
+#navbar-block {
+    height: 72px;
+    width: 100%;
+}
+
+/* The side navigation menu */
+.sidenav {
+    width: 100%;
+    height: 0;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    transition: 0.4s;
+    background-color: white;
+    border-bottom: black solid 1px;
 }
 
 /*Hero section*/
@@ -319,7 +347,8 @@ audio::-webkit-media-controls-current-time-display {
 }
 
 /* Next & previous buttons */
-.prev, .next {
+.prev,
+.next {
     user-select: none;
     cursor: pointer;
     position: absolute;
@@ -433,12 +462,6 @@ audio::-webkit-media-controls-current-time-display {
 }
 
 @media only screen and (max-width: 900px) {
-    /*
-    html {
-        font-size: 15px;
-    }
-    */
-
     #wrapper {
         width: 100%;
         height: 100vh;
@@ -448,9 +471,28 @@ audio::-webkit-media-controls-current-time-display {
         width: 100%;
     }
 
-    #navbar a {
+    nav a, .sidenav a, #menu {
         font-size: 1.7rem;
-        padding: 26px 15px;
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    #close {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    #menu, #close {
+        display: block;
+        float: right;
+    }
+
+    nav a {
+        display: none;
+    }
+
+    #home {
+        display: block;
     }
 
     #hero {
@@ -469,11 +511,9 @@ audio::-webkit-media-controls-current-time-display {
     #exeter4,
     #exeter5,
     #exeter6 {
-        left: 50%;
-        top: 50%;
-        opacity: 0;
+        display: none;
     }
-    
+
     .section {
         padding: 30px 10px;
     }

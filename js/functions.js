@@ -11,6 +11,19 @@ window.onscroll = function() {
   prevScrollpos = currentScrollPos;
 }
 
+/*Menú extra en móvil*/
+function openNav() {
+  document.getElementById("mySidenav").style.height = "72px";
+  document.getElementById("wrapper").style.marginTop = "72px";
+  document.getElementById("navbar").style.marginTop = "72px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.height = "0";
+  document.getElementById("wrapper").style.marginTop = "0";
+  document.getElementById("navbar").style.marginTop = "0";
+}
+
 /*Carousel*/
 
 let slideIndex = 1;

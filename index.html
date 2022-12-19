@@ -10,18 +10,26 @@
 </head>
 
 <body>
+    <div id="mySidenav" class="sidenav">
+        <a class="navbtn" href="#album">ALBUM</a>
+        <a class="navbtn" href="#about">ABOUT</a>
+        <a class="navbtn" href="#gallery">GALLERY</a>
+        <a class="subpage" href="./drain-gang.html">DG</a>
+        <span id="close" onclick="closeNav()">X</span>
+      </div>
+
     <div id="wrapper">
         <nav>
             <div id="navbar">
-                <a href="#">HOME</a>
-                <a href="#album">THE ALBUM</a>
-                <a href="#about">ABOUT</a>
-                <a href="#gallery">GALLERY</a>
-                <a class="subpage" href="./drain-gang.html">DRAIN GANG (WIP)</a>
+                <a id="home" href="#">HOME</a>
+                <a class="navbtn" href="#album">ALBUM</a>
+                <a class="navbtn" href="#about">ABOUT</a>
+                <a class="navbtn" href="#gallery">GALLERY</a>
+                <a class="subpage" href="./drain-gang.html">DRAIN GANG</a>
+                <span id="menu" onclick="openNav()">MENU</span>
             </div>
-            <div id="navbar-block"></div>
         </nav>
-
+        <div id="navbar-block"></div>
         <section id="hero">
             <div id="exeter1" class="hide">
                 <span class="not-selectable">
