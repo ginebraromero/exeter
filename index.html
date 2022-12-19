@@ -11,17 +11,16 @@
 
 <body>
     <div id="mySidenav" class="sidenav">
-        <a class="navbtn" href="#album">ALBUM</a>
-        <a class="navbtn" href="#about">ABOUT</a>
-        <a class="navbtn" href="#gallery">GALLERY</a>
-        <a class="subpage" href="./drain-gang.html">DG</a>
+        <a class="navbtn" href="#album-anchor">ALBUM</a>
+        <a class="navbtn" href="#about-anchor">ABOUT</a>
+        <a class="navbtn" href="#gallery-anchor">GALLERY</a>
         <span id="close" onclick="closeNav()">X</span>
-      </div>
+    </div>
 
     <div id="wrapper">
         <nav>
             <div id="navbar">
-                <a id="home" href="#">HOME</a>
+                <a class="home" href="#">HOME</a>
                 <a class="navbtn" href="#album">ALBUM</a>
                 <a class="navbtn" href="#about">ABOUT</a>
                 <a class="navbtn" href="#gallery">GALLERY</a>
@@ -29,7 +28,9 @@
                 <span id="menu" onclick="openNav()">MENU</span>
             </div>
         </nav>
+
         <div id="navbar-block"></div>
+
         <section id="hero">
             <div id="exeter1" class="hide">
                 <span class="not-selectable">
@@ -68,6 +69,7 @@
             </div>
         </section>
 
+        <a id="album-anchor" class="anchor"></a>
         <section class="section" id="album">
             <div class="titulo">
                 Listen to the album
@@ -123,6 +125,8 @@
             </div>
         </section>
 
+        
+        <a id="about-anchor" class="anchor"></a>
         <section class="section" id="about">
             <div class="titulo">
                 About EXETER
@@ -168,6 +172,7 @@
             </p>
         </section>
 
+        <a id="gallery-anchor" class="anchor"></a>
         <section class="section" id="gallery">
             <div class="titulo">
                 Gallery
@@ -196,7 +201,7 @@
                 </div>
 
                 <a class="prev" onclick="plusSlides(-1)">Prev</a>
-                <a class="next" onclick="plusSlides(1)">Next</a>
+                <a class="next" onclick="plusSlides( 1)">Next</a>
             </div>
 
             <div style="text-align:center">
@@ -207,16 +212,53 @@
             </div>
         </section>
 
-        <section>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-        </section>
-
         <footer>
-            <div class="titulo">
-                Footer
+            <div id="grid-footer-parent">
+                <div id="grid-footer">
+                    <div class="fhome">
+                        <a href="#">Home</a>
+                    </div>
+                    <div class="falbum">
+                        <a href="#album-anchor">Album</a>
+                    </div>
+                    <div class="fabout">
+                        <a href="#about-anchor">About</a>
+                    </div>
+                    <div class="fgallery">
+                        <a href="#gallery-anchor">Gallery</a>
+                    </div>
+                    <div class="fexeter">
+                        <a class="home" href="">Exeter</a>
+                    </div>
+                    <div class="fdg">
+                        <a class="subpage" style="float: initial;" href="./drain-gang.html">Drain Gang</a>
+                    </div>
+                    <div class="follow">
+                        <a href="javascript:void(0);">Follow Bladee on:</a>
+                    </div>
+                    <div class="grid-twig">
+                        <div>
+                            <a href="https://twitter.com/BladeeCity">Twitter</a>
+                        </div>
+                        <div>
+                            <a href="https://www.instagram.com/dg_bladee">Instagram</a>
+                        </div>
+                    </div>
+                    <div class="fspoti">
+                        <a href="https://open.spotify.com/artist/2xvtxDNInKDV4AvGmjw6d1">Spotify</a>
+                    </div>
+                    <div class="fapple">
+                        <a href="https://music.apple.com/us/artist/bladee/861359576">Apple Music</a>
+                    </div>
+                </div>
+
+                <div id="div-img"><img src="./images/favicon.png" alt="Drain Gang Logo"></div>
+
+                <div id="div-return">
+                    <a id="return" href="#">RETURN TO <span>TOP</span></a>
+                </div>
             </div>
+            <a href="#" id="top">TOP</a>
         </footer>
     </div>
 

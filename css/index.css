@@ -101,27 +101,44 @@ nav a, .sidenav a, #menu, #close {
     padding: 26px 24px 46px;
 }
 
-.navbtn, #home, #menu, #close {
+.navbtn, #menu, #close {
     color: black;
     background-color: white;
 }
 
-.navbtn:hover, #home:hover, #menu:hover, #close:hover {
+.navbtn:hover, #menu:hover, #close:hover {
     color: white;
     background-color: black;
 }
 
 .subpage {
-    color: var(--rojo);
+    float: right;
+    color: rgb(0 90 173);
 }
 
 .subpage:hover {
-    background-color: var(--rojo);
+    color: white;
+    background-color: rgb(0 90 173) !important;
+}
+
+.home {
+    color: var(--rojo);
+    background-color: white;
+}
+
+.home:hover {
+    background-color: var(--rojo) !important;
     color: white;
 }
 
 #menu, #close {
     cursor: pointer;
+    display: block;
+    float: right;
+    padding-left: 0;
+    padding-right: 0;
+    width: 72px;
+    text-align: center;
 }
 
 #menu {
@@ -133,18 +150,24 @@ nav a, .sidenav a, #menu, #close {
     width: 100%;
 }
 
-/* The side navigation menu */
 .sidenav {
-    width: 100%;
+    width: 860px;
     height: 0;
     position: fixed;
-    z-index: 2;
     top: 0;
-    left: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
     overflow: hidden;
     transition: 0.4s;
     background-color: white;
-    border-bottom: black solid 1px;
+    border-bottom: 1px solid black;
+}
+
+.anchor {
+    display: block;
+    padding-top: 72px;
+    margin-top: -72px;
 }
 
 /*Hero section*/
@@ -258,13 +281,13 @@ nav a, .sidenav a, #menu, #close {
 
 audio {
     width: 100%;
-    padding-bottom: 20px;
-    height: 40px;
+    padding: 5px 0 18px;
+    height: 32px;
 }
 
 audio::-webkit-media-controls-panel {
     background-color: white;
-    height: 40px;
+    height: 32px;
 }
 
 audio::-webkit-media-controls-mute-button {
@@ -406,7 +429,160 @@ audio::-webkit-media-controls-current-time-display {
     }
 }
 
-/*--------------------------------------*/
+/*Footer*/
+footer {
+    height: 144px;
+}
+
+#grid-footer-parent {
+    display: grid;
+    grid-template-columns: 1fr 72px 193px;
+}
+
+#grid-footer {
+    display: grid;
+    grid-template-areas:
+        'home follow spotify exeter'
+        'album twig spotify exeter'
+        'about twig apple dg'
+        'gallery twig apple dg';
+}
+
+.fhome {
+    grid-area: home;
+    position: relative;
+}
+
+.falbum {
+    grid-area: album;
+    position: relative;
+}
+
+.fabout {
+    grid-area: about;
+    position: relative;
+}
+
+.fgallery {
+    grid-area: gallery;
+    position: relative;
+}
+
+.fexeter {
+    grid-area: exeter;
+    position: relative;
+}
+
+.fdg {
+    grid-area: dg;
+    position: relative;
+}
+
+.follow {
+    grid-area: follow;
+    position: relative;
+}
+
+.grid-twig {
+    grid-area: twig;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+
+.grid-twig div {
+    position: relative;
+}
+
+.fspoti {
+    grid-area: spotify;
+    position: relative;
+}
+
+.fapple {
+    grid-area: apple;
+    position: relative;
+}
+
+footer img {
+    width: 52px;
+    height: 52px;
+    padding: 10px;
+    display: block;
+}
+
+#grid-footer a {
+    position: absolute;
+    display: block;
+    font-family: din;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+#grid-footer a:hover {
+    background-color: black;
+    color: white;
+}
+
+#div-img, #div-return {
+    padding-top: 72px;
+}
+
+.fhome a, .falbum a, .fabout a, .fgallery a, .follow a {
+    padding-top: 7px;
+    height: 29px;
+}
+
+.fexeter a, .fdg a, .fspoti a, .fapple a {
+    padding-top: 27px;
+    height: 45px;
+}
+
+.grid-twig a {
+    padding-top: 19px;
+    height: 35px;
+}
+
+#grid-footer a {
+    padding: inherit 12px;
+}
+
+/*Return to top*/
+#return {
+    display: block;
+    height: 0;
+    padding: 24px 0 48px;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#div-return {
+    z-index: 2;
+}
+
+#top {
+    position:fixed;
+    bottom: 0;
+    right: 0;
+    width: 72px;
+    height: 0;
+    padding: 24px 0 48px;
+    font-size: 2rem;
+    text-align: center;
+    z-index: 1;
+    display: none;
+}
+
+#return:hover span {
+    opacity: 1;
+    color: white;
+}
+
+#return:hover, #top:hover {
+    color: white;
+    background-color: black;
+}
 
 
 
@@ -434,12 +610,7 @@ audio::-webkit-media-controls-current-time-display {
     }
 
     #exeter3 {
-        opacity: 0;
-        padding: 0;
-        width: 0;
-        height: 0;
-        top: 0;
-        left: 0;
+        display: none;
     }
 
     #exeter4 {
@@ -450,14 +621,14 @@ audio::-webkit-media-controls-current-time-display {
 
     #exeter5 {
         left: 73%;
-        top: 79%;
-        padding-right: 108px;
+        top: 75%;
+        padding-right: 80px;
     }
 
     #exeter6 {
-        left: 77.5%;
+        left: 76.5%;
         top: 26%;
-        padding-right: 35px;
+        padding-right: 10px;
     }
 }
 
@@ -471,28 +642,49 @@ audio::-webkit-media-controls-current-time-display {
         width: 100%;
     }
 
-    nav a, .sidenav a, #menu {
+    #exeter1 {
+        opacity: 1;
+    }
+
+    .section {
+        padding: 30px 10px;
+    }
+
+    #top {
+        display: block;
+    }
+
+    #return span {
+        display: inline-block;
+        opacity: 0;
+        color: black;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .sidenav {
+        width: 100%;
+        left: 0;
+        transform: initial;
+    }
+
+    .sidenav a, nav a {
         font-size: 1.7rem;
         padding-left: 13px;
         padding-right: 13px;
     }
-
-    #close {
-        padding-left: 17px;
-        padding-right: 17px;
-    }
-
-    #menu, #close {
-        display: block;
-        float: right;
-    }
-
-    nav a {
+    
+    nav .navbtn {
         display: none;
     }
-
-    #home {
+    
+    #menu, #close {
+        font-size: 1.7rem;
         display: block;
+    }
+
+    .subpage {
+        float: left;
     }
 
     #hero {
@@ -501,7 +693,7 @@ audio::-webkit-media-controls-current-time-display {
         padding-bottom: 100%;
         background-size: contain;
     }
-
+    
     #exeter1 {
         opacity: 1;
     }
@@ -514,13 +706,30 @@ audio::-webkit-media-controls-current-time-display {
         display: none;
     }
 
-    .section {
-        padding: 30px 10px;
-    }
-
     #grid-audio {
         grid-template-columns: 1fr;
         gap: 4px;
     }
 
+    #grid-footer-parent {
+        grid-template-columns: 1fr 72px 72px;
+    }
+
+    #div-return {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 625px) {
+    #grid-footer {
+        grid-template-areas:
+        'home spotify exeter'
+        'album spotify exeter'
+        'about apple dg'
+        'gallery apple dg';
+    }
+
+    .follow, .grid-twig {
+        display: none;
+    }
 }
